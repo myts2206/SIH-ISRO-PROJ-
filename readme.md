@@ -4,3 +4,9 @@ This project is dedicated to the development of a software application for the a
 ## __Features__
 1. __Classification & Identification__
    Audio, video, data, and protocols such as MPE, ULE, SIP, RTP, FTP, SFTP, HTTP, HTTPS, SNMP, POP, SMTP, SSH, etc.
+2. __Encryption/Scrambling Detection:__
+   Identify encryption or scrambling techniques through headers and SI tables.
+3. __Content Extraction:__
+   Extract VoIP calls, audio and video programs, files, emails, web pages, etc., into separate files.
+4. __Content Decoding and Playback:__
+Decode and play selected audio/video content.
