@@ -4,9 +4,24 @@ This project is dedicated to the development of a software application for the a
 ## __Features__
 1. __Classification & Identification__
    Audio, video, data, and protocols such as MPE, ULE, SIP, RTP, FTP, SFTP, HTTP, HTTPS, SNMP, POP, SMTP, SSH, etc.
-2. __Encryption/Scrambling Detection:__
+   
+   __What Exactly Happens:Classification Function (classify_protocols)__
+
+      The classify_protocols function is responsible for categorizing packets into different protocols. It examines each packet and identifies the protocol based on the following criteria:
+
+      Port Numbers: Certain protocols are associated with specific destination port numbers. For example, SIP typically uses port 5060, HTTP uses port 80, and HTTPS uses port 443.
+
+      Payload Patterns: Some protocols have distinct patterns in their payload. For instance, MPEG-TS streams contain packets with a specific marker pattern (hexadecimal value 0x47).
+
+      Header Values: Scrambled MPEG-TS streams are identified by examining the Transport Scrambling Control (TSC) value in the packet header.
+
+      Processing Folder Function (process_folder)
+
+      The process_folder function scans a specified folder for PCAP files. It iterates through each file, reads it as a PCAP file, and applies the classify_protocols function to categorize the packets within. 
+   
+3. __Encryption/Scrambling Detection:__
    Identify encryption or scrambling techniques through headers and SI tables.
-3. __Content Extraction:__
+4. __Content Extraction:__
    Extract VoIP calls, audio and video programs, files, emails, web pages, etc., into separate files.
-4. __Content Decoding and Playback:__
+5. __Content Decoding and Playback:__
 Decode and play selected audio/video content.
